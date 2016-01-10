@@ -25,17 +25,17 @@ function getPlayerMove(move) {
     // Write an expression that operates on a variable called `move`
     // If a `move` has a value, your expression should evaluate to that value.
     // However, if `move` is not specified / is null, your expression should equal `getInput()`.
-    var move = move || getInput();
-    return move;
-}
+    var playerMove = move || getInput();
+    return playerMove;
+};
 
 function getComputerMove(move) {
     // Write an expression that operates on a variable called `move`
     // If a `move` has a value, your expression should evaluate to that value.
     // However, if `move` is not specified / is null, your expression should equal `randomPlay()`.
-    var move = move || randomPlay();
-    return move;
-}
+    var computerMove = move || randomPlay();
+    return computerMove;
+};
 
 function getWinner(playerMove,computerMove) {
     var winner;
@@ -43,8 +43,15 @@ function getWinner(playerMove,computerMove) {
     // Assume that the only values playerMove and computerMove can have are 'rock', 'paper', and 'scissors'.
     // The rules of the game are that 'rock' beats 'scissors', 'scissors' beats 'paper', and 'paper' beats 'rock'.
     /* YOUR CODE HERE */
+    if (playerMove > computerMove) {
+        winner = "player";
+    } else if (computerMove > playerMove) {
+        winner = "computer";
+    } else {
+        winner = "tie";
+    };
     return winner;
-}
+};
 
 function playToFive() {
     console.log("Let's play Rock, Paper, Scissors");
@@ -53,5 +60,5 @@ function playToFive() {
     // Write code that plays 'Rock, Paper, Scissors' until either the player or the computer has won five times.
     /* YOUR CODE HERE */
     return [playerWins, computerWins];
-}
+};
 
